@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pattern lang decoder</title>
+    </head>
+    <body>
+        <!-- Side/top-bar with options for the symbol -->
+         <div id="options">
+            <form>
+                <fieldset>
+                    <legend>Nya symboler</legend>
+                    <div>
+                        <input type="number" min="1" step="1" value="2" class="numberInput" id="wIn" /> &#215;
+                        <input type="number" min="1" step="1" value="2" class="numberInput" id="hIn" />
+                    </div>
+                    <input type="button" value="Ny symbol" onclick="newFromForm();" />
+                </fieldset>
+                <fieldset id="export">
+                    <legend>Exportera</legend>
+                    <input type="button" value="Exportera som SVG" onclick="exportSVG()"/>
+                    <input type="button" value="Exportera som PNG" onclick="exportPNG()"/>
+                    <input type="button" value="Kopiera hexkod" onclick="copyHex()" />
+                </fieldset>
+            </form>
+        </div>
+        <!-- Contains the lines for the pattern -->
+        <div id="mainContent">
+            <svg id="symbolContainer" width="200" height="200">
+                <line x1="50" y1="50" x2="150" y2="150" stroke="black" stroke-width="2" />
+            </svg>
+        </div>
+
+        <script src="coder.js"></script>
+    </body>
+</html>
